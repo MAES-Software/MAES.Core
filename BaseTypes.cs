@@ -8,7 +8,7 @@ public abstract class Entity
 	[Key]
 	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 	[MaxLength(64)]
-	public string Id { get; set; } = "";
+	public string Id { get; set; } = Guid.NewGuid().ToString();
 }
 
 public class NamedEntity : Entity
