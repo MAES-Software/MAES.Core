@@ -5,6 +5,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
+    
+    <!-- NuGet Package Properties -->
+    <PackageId>MAES.Core</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Roko Tomović</Authors>
+    <Description>Core library for MAES</Description>
+    <RepositoryUrl>https://github.com/yourusername/MAES.Core</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>GNU General Public License v3.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
