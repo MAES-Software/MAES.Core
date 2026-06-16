@@ -16,7 +16,7 @@
     <RepositoryUrl>https://github.com/MAES-Software/MAES.Core</RepositoryUrl>
     <PackageTags>corelib</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
