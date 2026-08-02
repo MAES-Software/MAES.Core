@@ -8,7 +8,7 @@
     
     <!-- NuGet Metadata -->
     <PackageId>MAES.Core</PackageId>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>Roko Tomović</Authors>
     <Company>MAES</Company>
     <Description>Core library for MAES</Description>

@@ -5,30 +5,31 @@ namespace MAES.Core;
 
 public abstract class AppData
 {
-	static readonly JsonSerializerOptions options = new () { WriteIndented = true };
+	JsonSerializerOptions? options;
 
     string filePath { get; set; } = "";
 
-	public static T Load<T>(string fileName) where T : AppData, new()
+	public static T Load<T>(string fileName, JsonSerializerOptions? opts = null, T? newValue = null) where T : AppData, new()
 	{
 		T result;
 
 		try
 		{
-			result = JsonSerializer.Deserialize<T>(File.ReadAllText(fileName)) ?? new T();
+			result = JsonSerializer.Deserialize<T>(File.ReadAllText(fileName), opts) ?? (newValue is T val ? val : new T());
 		}
 		catch (Exception)
 		{
-			result = new T();
-            File.WriteAllText(fileName, JsonSerializer.Serialize(result, options));
+			result = newValue is T val ? val : new T();
+            File.WriteAllText(fileName, JsonSerializer.Serialize(result, opts));
 		}
 
 		result.filePath = fileName;
+        result.options = opts;
 
 		return result;
 	}
 
-	public async Task SaveChanges() => File.WriteAllText(filePath, JsonSerializer.Serialize(this, GetType(), options));
+	public void SaveChanges() => File.WriteAllText(filePath, JsonSerializer.Serialize(this, GetType(), options));
 }
 
 public class AppDataList<T> : AppData, IList<T>
